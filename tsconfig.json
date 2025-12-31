@@ -1,0 +1,36 @@
+/* For more information on this file: https://www.typescriptlang.org/tsconfig */
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "es2020",
+    "baseUrl": "./",
+    "outDir": "./dist",
+    "module": "es2020",
+    "moduleResolution": "node",
+    "jsx": "preserve",
+    "importHelpers": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "sourceMap": true,
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "lib": [
+      "esnext",
+      "dom"
+    ]
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.vue"
+  ],
+  "exclude": [
+    "node_modules",
+    "public"
+  ],
+  "types": ["vitest/globals"]
+}
