@@ -2,14 +2,17 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ main ] # Change this to 'master' if your branch uses that name
+    branches: [ main ]
+
+permissions:
+  contents: write  # This allows the action to create the gh-pages branch
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4 # Updated to latest version
 
       - name: Install and Build
         run: |
@@ -19,4 +22,4 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist # The folder the action should deploy
+          folder: dist
