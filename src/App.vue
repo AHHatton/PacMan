@@ -2,7 +2,7 @@
   import { ref, nextTick, computed } from "vue";
   import words from "./database/words.json"
   
-  let answer = ref<string[]>(['m', 'o','r','a','n']);
+  let answer = ref<string[]>(['h','e','l','l','o']);
   const guessedWord = ref<string[]>(Array(5).fill(''));  
   const guessedWords = ref<EvaluatedGuess[][]>([]);    
   const inputs = ref<HTMLInputElement[]>([])
@@ -105,26 +105,7 @@ const addToArray = () => {
     }
   });
 
-  // Push the final evaluation to history
   guessedWords.value.push(evaluation);
-
-
-  // const addToArray = () => {
-  //   const evaluatedGuess = guessedWord.value.map((letter, index) => {
-  //     let state: LetterState = 'absent';
-  //     const lowerLetter = letter.toLowerCase()
-  //     if(answer.value[index] === lowerLetter) 
-  //     {state = 'correct';
-  //       correctLetters.value ++ ;
-  //     }
-  //     else if (answer.value.includes(lowerLetter)) 
-  //     {state = 'present'
-  //     }
-  //     return {letter:lowerLetter, state}
-  //   })  
-  //   guessedWords.value.push(evaluatedGuess);
-    
-  
     
     turnsTaken.value ++ ;
     if(turnsRemaining.value > 0) {
@@ -144,7 +125,7 @@ const addToArray = () => {
       <h2>Score: {{ gamesWon }} / {{ gamesPlayed }}</h2>
     </div>
     
-    <h1 id="head">Pacman (obviously)</h1>
+    <h1 id="head">Wordle Schmurdle</h1>
     <h2 v-if="win">You won! You are so SMART</h2>
     <h2 v-if="lose">Oh no! You ran out of turns.</h2>
     <div 
